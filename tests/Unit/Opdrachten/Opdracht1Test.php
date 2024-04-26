@@ -20,7 +20,7 @@ test('De kolommen in tabel projects hebben de juiste datatype en grootte', funct
     $this->assertEquals('integer', Schema::getColumnType('projects', 'id'));
     $this->assertEquals('varchar', Schema::getColumnType('projects', 'name'));
     $this->assertEquals('text', Schema::getColumnType('projects', 'description'));
-    $this->assertEquals('datetime', Schema::getColumnType('activities', 'created_at'));
-    $this->assertEquals('datetime', Schema::getColumnType('activities', 'updated_at'));
+    $this->assertEquals('datetime', Schema::getColumnType('projects', 'created_at'));
+    $this->assertEquals('datetime', Schema::getColumnType('projects', 'updated_at'));
 })->group('Opdracht1');
 

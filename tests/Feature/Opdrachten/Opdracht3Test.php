@@ -10,7 +10,7 @@ beforeEach(function () {
 test('admin page is visable on the website', function () {
     $this->withoutExceptionHandling();
     $this->get('/admin')
-        ->assertViewIs('layouts.adminlayout')
+        ->assertViewIs('layouts.layoutadmin')
         ->assertSee('Laravel Opdrachten')
         ->assertStatus(200);
 })->group('Opdracht3');

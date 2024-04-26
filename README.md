@@ -28,6 +28,24 @@ wie de taken moeten uitvoeren. De functionaliteit bestaat uit het volgende:
 En ja, het ziet er misschien lastig uit, maar de opdrachten zullen steeds een klein stapje zijn. De opdrachten zullen ook heel precies zijn,
 er zijn namelijk automatische testen beschikbaar waar op alle details wordt gelet.
 
+## Wijzigingen
+
+Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
+<ol>
+<li>Bij opdracht1 is nu een aparte test. Test is uit te voeren met: .\vendor\bin\pest --group=Opdracht1 </li>
+<li>Bij opdracht2 is nu een aparte test. Test is uit te voeren met: .\vendor\bin\pest --group=Opdracht2
+<ul>
+<li>De Factory moet de volgende naam hebben: ProjectFactory</li>
+<li>De Seeder moet de volgende naam hebben: ProjectSeeder</li>
+</ul></li>
+<li>Bij opdracht3 is nu een nieuwe test. Test is uit te voeren met: .\vendor\bin\pest --group=Opdracht3 
+<ul>
+<li>De naam van de masterpage moet zijn: adminlayout.blade.php</li>
+<li>Op de pagina moet ergens de volgende tekst staan: Laravel Opdrachten</li>
+<li>Zorg dat deze layout zichtbaar op de pagina komt als in de url alleen een ‘/admin’ staat.</li>
+</ul></li>
+</ol>
+
 ## De installatie (bijv wampserver)
 Voer de volgende stappen uit om met deze opdrachten aan de slag te gaan.
 <ul>

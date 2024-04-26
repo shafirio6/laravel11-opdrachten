@@ -12,15 +12,15 @@ test('Data from factory is in the projects table', function () {
         'id' => $this->project->id,
         'name' => $this->project->name
     ]);
-})->group('Opdracht1_2');
+})->group('Opdracht2');
 
 test('a project id is a int', function(){
     expect($this->project->id)->toBeInt();
-})->group('Opdracht1_2');
+})->group('Opdracht2');
 
 test('a project name is a string', function(){
     expect($this->project->name)->toBeString();
-})->group('Opdracht1_2');
+})->group('Opdracht2');
 
 
 

@@ -18,7 +18,7 @@ test('De tabel projects heeft de juiste kolommen', function () {
 
 test('De kolommen in tabel projects hebben de juiste datatype en grootte', function () {
     $this->assertEquals('integer', Schema::getColumnType('projects', 'id'));
-    $this->assertEquals('string', Schema::getColumnType('projects', 'name'));
+    $this->assertEquals('varchar', Schema::getColumnType('projects', 'name'));
     $this->assertEquals('text', Schema::getColumnType('projects', 'description'));
     $this->assertEquals('datetime', Schema::getColumnType('activities', 'created_at'));
     $this->assertEquals('datetime', Schema::getColumnType('activities', 'updated_at'));

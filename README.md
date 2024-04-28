@@ -44,6 +44,11 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>Op de pagina moet ergens de volgende tekst staan: Laravel Opdrachten</li>
 <li>Zorg dat deze layout zichtbaar op de pagina komt als in de url alleen een ‘/admin’ staat.</li>
 </ul></li>
+<li>Bij opdracht4 is nu een nieuwe test. Test is uit te voeren met: .\vendor\bin\pest --group=Opdracht4 
+<ul>
+<li>De named route moet zijn: projects.index</li>
+<li>De id's worden nu ook werkelijk gecontrolleerd, met nieuwe projects en door middel van seed.</li>
+</ul></li>
 </ol>
 
 ## De installatie (bijv wampserver)

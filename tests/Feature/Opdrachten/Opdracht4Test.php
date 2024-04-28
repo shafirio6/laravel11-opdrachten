@@ -7,7 +7,7 @@ beforeEach(function (){
     $this->seed('ProjectSeeder');
 });
 
-test('index page is visable with project on the page', function()
+test('An project admin index page is visable with projects on the page', function()
 {
     $this->withoutExceptionHandling();
     $this->get(route('projects.index'))
@@ -15,4 +15,4 @@ test('index page is visable with project on the page', function()
         ->assertSee($this->project->id)
         ->assertSee($this->project->name)
         ->assertStatus(200);
-})->group('Opdracht3_4');
+})->group('Opdracht4');

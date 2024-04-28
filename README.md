@@ -50,18 +50,18 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>De id's worden nu ook werkelijk gecontrolleerd, met nieuwe projects en door middel van seed.</li>
 </ul></li>
 <li>Bij opdracht5 is de test aangepast. Test is uit te voeren met: .\vendor\bin\pest --group=Opdracht5 
-<ul>Het formulier:
+<ul><li>Het formulier:<ul>
 <li>Er is een input voor: name.</li>
 <li>Er is een textarea voor: description.</li>
 <li>De action gebruikt de correcte named route.</li>
-</ul>
-<ul>Het bewaren van data:
+</ul></li>
+<li>Het bewaren van data:<ul>
 <li>Er is een name en description. </li>
 <li>Mass assignment mag niet mogelijk zijn.</li>
 <li>In de model wordt gebruik gemaakt van $fillable.</li>
 <li>In de database komt de correcte name & description.</li>
 <li>Nadat het is opgeslagen word je automatisch naar de index gestuurd met de melding dat het project is toegevoegd.</li>
-</ul></li>
+</ul></li></ul>
 </ol>
 
 ## De installatie (bijv wampserver)

@@ -49,6 +49,12 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>De named route moet zijn: projects.index</li>
 <li>De id's worden nu ook werkelijk gecontrolleerd, met nieuwe projects en door middel van seed.</li>
 </ul></li>
+<li>Bij opdracht5 is de test aangepast. Test is uit te voeren met: .\vendor\bin\pest --group=Opdracht5 
+<ul>Het formulier:
+<li>Er is een input voor: name.</li>
+<li>Er is een textarea voor: description.</li>
+<li>De action gebruikt de correcte named route.</li>
+</ul></li>
 </ol>
 
 ## De installatie (bijv wampserver)

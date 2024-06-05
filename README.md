@@ -40,7 +40,7 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 </ul></li>
 <li>Bij opdracht3 is nu een nieuwe test. Test is uit te voeren met: .\vendor\bin\pest --group=Opdracht3 
 <ul>
-<li>De naam van de masterpage moet zijn: adminlayout.blade.php</li>
+<li>De naam van de masterpage moet zijn: layoutadmin.blade.php</li>
 <li>Op de pagina moet ergens de volgende tekst staan: Laravel Opdrachten</li>
 <li>Zorg dat deze layout zichtbaar op de pagina komt als in de url alleen een ‘/admin’ staat.</li>
 </ul></li>
@@ -60,7 +60,7 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>Mass assignment mag niet mogelijk zijn.</li>
 <li>In de model wordt gebruik gemaakt van $fillable.</li>
 <li>In de database komt de correcte name & description.</li>
-<li>Nadat het is opgeslagen word je automatisch naar de index gestuurd met de melding dat het project is toegevoegd.</li>
+<li>Nadat het is opgeslagen word je automatisch naar de project index gestuurd met de melding dat het project is toegevoegd.</li>
 </ul></li></ul>
 </ol>
 

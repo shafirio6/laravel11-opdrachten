@@ -62,6 +62,7 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>In de database komt de correcte name & description.</li>
 <li>Nadat het is opgeslagen word je automatisch naar de index gestuurd met de melding dat het project is toegevoegd.</li>
 </ul></li></ul>
+<li>Bij opdracht6 wordt nu getest of je werkelijk gebruik maakt van een aparte validatie request: ProjectStoreRequest
 </ol>
 
 ## De installatie (bijv wampserver)

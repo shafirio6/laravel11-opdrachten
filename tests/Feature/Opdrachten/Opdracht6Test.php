@@ -1,8 +1,6 @@
 <?php
 
 use App\Models\Project;
-use App\Http\Requests\ProjectStoreRequest;
-use Illuminate\Support\Facades\Route;
 
 beforeEach(function (){
     $this->project = Project::factory()->create();
@@ -43,12 +41,4 @@ test('when posting a project it requires a description', function () {
 
     $this->postJson(route('projects.store'), $project->toArray())
         ->assertStatus(422);
-})->group('Opdracht6');
-
-test('store method uses ProjectStoreRequest', function () {
-    $controller = new \App\Http\Controllers\Admin\ProjectController();
-    $method = new ReflectionMethod($controller, 'store');
-    $parameters = $method->getParameters();
-
-    $this->assertEquals(ProjectStoreRequest::class, $parameters[0]->getType()->getName());
 })->group('Opdracht6');

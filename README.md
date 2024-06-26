@@ -62,7 +62,13 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>In de database komt de correcte name & description.</li>
 <li>Nadat het is opgeslagen word je automatisch naar de index gestuurd met de melding dat het project is toegevoegd.</li>
 </ul></li></ul>
-<li>Bij opdracht6 wordt nu getest of je werkelijk gebruik maakt van een aparte validatie request: ProjectStoreRequest
+<li>Bij opdracht6 wordt nu getest of :
+<ul><li>je werkelijk gebruik maakt van een aparte validatie request: ProjectStoreRequest</li>
+<li>De foutmeldingen bij validatie errors op het scherm komen</li>
+<li>Na correct opslaan er een redirect naar project.index wordt gebruikt, met gebruik van een flash message</li>
+<li>De melding bij opslaan in de index getoond wordt: Project {projectnaam} is aangemaakt</li>
+
+</ul></li>
 </ol>
 
 ## De installatie (bijv wampserver)

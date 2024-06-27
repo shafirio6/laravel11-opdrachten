@@ -67,7 +67,16 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>De foutmeldingen bij validatie errors op het scherm komen</li>
 <li>Na correct opslaan er een redirect naar project.index wordt gebruikt, met gebruik van een flash message</li>
 <li>De melding bij opslaan in de index getoond wordt: Project {projectnaam} is aangemaakt</li>
-
+</ul></li>
+<li>Opdracht7: niets aangepast</li>
+<li>Bij opdracht8 wordt nu getest of :
+<ul>
+<li>De correcte action in het formulier staat naar 'projects.update'</li>
+<li>De input velden voor name & description er correct in staan</li>
+<li>je werkelijk gebruik maakt van een aparte validatie request: ProjectUpdateRequest</li>
+<li>De foutmeldingen bij validatie errors op het scherm komen</li>
+<li>Na correct opslaan er een redirect naar project.index wordt gebruikt, met gebruik van een flash message</li>
+<li>De melding bij opslaan in de index getoond wordt: Project {projectnaam} is gewijzigd</li>
 </ul></li>
 </ol>
 

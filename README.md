@@ -85,6 +85,17 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>Na correct verwijderen er een redirect naar project.index wordt gebruikt, met gebruik van een flash message</li>
 <li>De melding bij delete in de index getoond wordt: Project {projectnaam} is verwijderd</li>
 </ul></li>
+<li>Opdracht10: niets aangepast</li>
+<li>Bij opdracht11 wordt nu getest of :
+<ul>
+<li>De controller moet in de map staan: App/Http/Controllers/Open/ </li>
+<li>De naam van de controller is: ProjectController</li>
+<li>De view moet in de map staan: Resources/views/open/projects/ </li>
+<li>De naam van de view is: index.blade.php</li>
+<li>Op de pagina moeten de id, name en description staan.</li>
+<li>Er moet met pagina's worden gewerkt, met 10 projecten per pagina, waarbij de correcte data wordt getoond.</li>
+</ul></li>
+
 </ol>
 
 ## De installatie (bijv wampserver)

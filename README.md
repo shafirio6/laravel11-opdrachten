@@ -76,7 +76,14 @@ Let op, de volgende wijzigingen zijn doorgevoerd bij de opdrachten:
 <li>je werkelijk gebruik maakt van een aparte validatie request: ProjectUpdateRequest</li>
 <li>De foutmeldingen bij validatie errors op het scherm komen</li>
 <li>Na correct opslaan er een redirect naar project.index wordt gebruikt, met gebruik van een flash message</li>
-<li>De melding bij opslaan in de index getoond wordt: Project {projectnaam} is gewijzigd</li>
+<li>De melding bij update in de index getoond wordt: Project {projectnaam} is gewijzigd</li>
+</ul></li>
+<li>Bij opdracht9 wordt nu getest of :
+<ul>
+<li>De correcte action in het formulier staat naar 'projects.update'</li>
+<li>De input velden voor name & description er correct in staan</li>
+<li>Na correct verwijderen er een redirect naar project.index wordt gebruikt, met gebruik van een flash message</li>
+<li>De melding bij delete in de index getoond wordt: Project {projectnaam} is verwijderd</li>
 </ul></li>
 </ol>
 

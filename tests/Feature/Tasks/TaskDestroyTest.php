@@ -27,7 +27,7 @@ test('an admin can delete a task in the task admin', function () {
         ->assertRedirect(route('tasks.index'));
 
     $this->assertDatabaseMissing('tasks',['id' => $this->task->id]);
-})->group('TaskDestroy', 'Opdracht22', 'Website');
+})->group('TaskDestroy', 'Opdracht22oud', 'Website');
 
 test('a teacher can update a task in the task admin', function () {
     $this->withoutExceptionHandling();
@@ -37,7 +37,7 @@ test('a teacher can update a task in the task admin', function () {
         ->assertRedirect(route('tasks.index'));
 
     $this->assertDatabaseMissing('tasks',['id' => $this->task->id]);
-})->group('TaskDestroy', 'Opdracht22', 'Website');
+})->group('TaskDestroy', 'Opdracht22oud', 'Website');
 
 test('a student can update a task in the task admin', function () {
     $this->withoutExceptionHandling();
@@ -47,10 +47,10 @@ test('a student can update a task in the task admin', function () {
         ->assertRedirect(route('tasks.index'));
 
     $this->assertDatabaseMissing('tasks',['id' => $this->task->id]);
-})->group('TaskDestroy', 'Opdracht22', 'Website');
+})->group('TaskDestroy', 'Opdracht22oud', 'Website');
 
 test('a guest can not update a task in the task admin', function () {
     $this->json('DELETE', route('tasks.destroy',['task' => $this->task->id]))
         ->assertStatus(401);
-})->group('TaskDestroy', 'Opdracht22', 'Website');
+})->group('TaskDestroy', 'Opdracht22oud', 'Website');
 

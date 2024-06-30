@@ -34,7 +34,7 @@ test('admin can see the task admin create page', function()
         ->assertSee(Activity::find(2)->name)
         ->assertSee(Activity::find(3)->name)
         ->assertStatus(200);
-})->group( 'TaskIndex', 'Opdracht19', 'Website');
+})->group( 'TaskIndex', 'Opdracht19oud', 'Website');
 
 test('teacher can see the task admin create page', function()
 {
@@ -53,7 +53,7 @@ test('teacher can see the task admin create page', function()
         ->assertSee(Activity::find(2)->name)
         ->assertSee(Activity::find(3)->name)
         ->assertStatus(200);
-})->group( 'TaskIndex', 'Opdracht19', 'Website');
+})->group( 'TaskIndex', 'Opdracht19oud', 'Website');
 
 test('student can see the task admin create page', function()
 {
@@ -72,12 +72,12 @@ test('student can see the task admin create page', function()
         ->assertSee(Activity::find(2)->name)
         ->assertSee(Activity::find(3)->name)
         ->assertStatus(200);
-})->group( 'TaskIndex', 'Opdracht19', 'Website');
+})->group( 'TaskIndex', 'Opdracht19oud', 'Website');
 
 test('guest can not see the task admin create page', function(){
     $this->get(route('tasks.create'))
         ->assertRedirect(route('login'));
-})->group('TaskIndex', 'Opdracht19', 'Website');
+})->group('TaskIndex', 'Opdracht19oud', 'Website');
 
 
 

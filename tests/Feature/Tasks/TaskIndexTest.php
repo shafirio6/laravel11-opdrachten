@@ -29,7 +29,7 @@ test('admin can see the task admin index page', function()
         ->assertSee($this->task->project->name)
         ->assertSee($this->task->activity->name)
         ->assertStatus(200);
-})->group( 'TaskIndex', 'Opdracht18', 'Website');
+})->group( 'TaskIndex', 'Opdracht18oud', 'Website');
 
 test('teacher can see the task admin index page', function()
 {
@@ -46,7 +46,7 @@ test('teacher can see the task admin index page', function()
         ->assertSee($this->task->project->name)
         ->assertSee($this->task->activity->name)
         ->assertStatus(200);
-})->group( 'TaskIndex', 'Opdracht18', 'Website');
+})->group( 'TaskIndex', 'Opdracht18oud', 'Website');
 
 test('student can see the task admin index page', function()
 {
@@ -63,12 +63,12 @@ test('student can see the task admin index page', function()
         ->assertSee($this->task->project->name)
         ->assertSee($this->task->activity->name)
         ->assertStatus(200);
-})->group( 'TaskIndex', 'Opdracht18', 'Website');
+})->group( 'TaskIndex', 'Opdracht18oud', 'Website');
 
 test('guest can not see the task admin index page', function(){
     $this->get(route('tasks.index'))
         ->assertRedirect(route('login'));
-})->group('TaskIndex', 'Opdracht18', 'Website');
+})->group('TaskIndex', 'Opdracht18oud', 'Website');
 
 
 

@@ -46,7 +46,7 @@ test('an admin can update a task in the task admin', function () {
         'project_id' => 2,
         'activity_id' => 2
     ]);
-})->group('TaskUpdate', 'Opdracht21', 'Website');
+})->group('TaskUpdate', 'Opdracht21oud', 'Website');
 
 test('a teacher can update a task in the task admin', function () {
     $this->withoutExceptionHandling();
@@ -71,7 +71,7 @@ test('a teacher can update a task in the task admin', function () {
         'project_id' => 2,
         'activity_id' => 2
     ]);
-})->group('TaskUpdate', 'Opdracht21', 'Website');
+})->group('TaskUpdate', 'Opdracht21oud', 'Website');
 
 test('a student can update a task in the task admin', function () {
     $this->withoutExceptionHandling();
@@ -96,7 +96,7 @@ test('a student can update a task in the task admin', function () {
         'project_id' => 2,
         'activity_id' => 2
     ]);
-})->group('TaskUpdate', 'Opdracht21', 'Website');
+})->group('TaskUpdate', 'Opdracht21oud', 'Website');
 
 test('a guest can not update a task in the task admin', function () {
     $task = Task::factory()->make(['task' => 'de tweede taak',
@@ -108,5 +108,5 @@ test('a guest can not update a task in the task admin', function () {
 
     $this->patchJson(route('tasks.update',['task' => $this->task->id]), $task->toArray())
         ->assertStatus(401);
-})->group('TaskUpdate', 'Opdracht21', 'Website');
+})->group('TaskUpdate', 'Opdracht21oud', 'Website');
 

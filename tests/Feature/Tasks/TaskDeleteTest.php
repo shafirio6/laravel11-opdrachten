@@ -37,7 +37,7 @@ test('admin can see the task admin delete page', function()
         ->assertSee($this->task->project->name)
         ->assertSee($this->task->activity->name)
         ->assertStatus(200);
-})->group('TaskDelete', 'Opdracht22', 'Website');
+})->group('TaskDelete', 'Opdracht22oud', 'Website');
 
 test('teacher can see the task admin delete page', function()
 {
@@ -53,7 +53,7 @@ test('teacher can see the task admin delete page', function()
         ->assertSee($this->task->project->name)
         ->assertSee($this->task->activity->name)
         ->assertStatus(200);
-})->group('TaskDelete', 'Opdracht22', 'Website');
+})->group('TaskDelete', 'Opdracht22oud', 'Website');
 
 test('student can see the task admin delete page', function()
 {
@@ -69,12 +69,12 @@ test('student can see the task admin delete page', function()
         ->assertSee($this->task->project->name)
         ->assertSee($this->task->activity->name)
         ->assertStatus(200);
-})->group('TaskDelete', 'Opdracht22', 'Website');
+})->group('TaskDelete', 'Opdracht22oud', 'Website');
 
 test('guest can not see the task admin delete page', function(){
     $this->get(route('tasks.delete',['task' => $this->task->id]))
         ->assertRedirect(route('login'));
-})->group('TaskDelete', 'Opdracht22', 'Website');
+})->group('TaskDelete', 'Opdracht22oud', 'Website');
 
 
 

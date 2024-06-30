@@ -10,7 +10,7 @@ beforeEach(function () {
 
 test('De tabel activity bestaat', function () {
     $this->assertTrue(Schema::hasTable('activities'));
-})->group('Opdracht14');
+})->group('Opdracht14oud');
 
 test('De tabel activities heeft de juiste kolommen', function () {
     $this->assertTrue(Schema::hasColumns('activities', [
@@ -19,19 +19,19 @@ test('De tabel activities heeft de juiste kolommen', function () {
         'created_at',
         'updated_at'
     ]));
-})->group('Opdracht14');
+})->group('Opdracht14oud');
 
 test('De kolommen in tabel activities hebben de juiste datatype en grootte', function () {
     $this->assertEquals('integer', Schema::getColumnType('activities', 'id'));
     $this->assertEquals('string', Schema::getColumnType('activities', 'name'));
     $this->assertEquals('datetime', Schema::getColumnType('activities', 'created_at'));
     $this->assertEquals('datetime', Schema::getColumnType('activities', 'updated_at'));
-})->group('Opdracht14');
+})->group('Opdracht14oud');
 
 
 test('De tabel tasks bestaat', function () {
     $this->assertTrue(Schema::hasTable('tasks'));
-})->group('Opdracht14');
+})->group('Opdracht14oud');
 
 test('De tabel tasks heeft de juiste kolommen', function () {
     $this->assertTrue(Schema::hasColumns('tasks', [
@@ -45,7 +45,7 @@ test('De tabel tasks heeft de juiste kolommen', function () {
         'created_at',
         'updated_at'
     ]));
-})->group('Opdracht14');
+})->group('Opdracht14oud');
 
 test('De kolommen in tabel tasks hebben de juiste datatype en grootte', function () {
     $this->assertEquals('integer', Schema::getColumnType('tasks', 'id'));
@@ -57,6 +57,6 @@ test('De kolommen in tabel tasks hebben de juiste datatype en grootte', function
     $this->assertEquals('integer', Schema::getColumnType('tasks', 'user_id'));
     $this->assertEquals('datetime', Schema::getColumnType('tasks', 'created_at'));
     $this->assertEquals('datetime', Schema::getColumnType('tasks', 'updated_at'));
-})->group('Opdracht14');
+})->group('Opdracht14oud');
 
 

@@ -25,4 +25,4 @@ test('index page of the task admin is visable with tasks on the page', function(
         ->assertSee($this->task->project->name)
         ->assertSee($this->task->activity->name)
         ->assertStatus(200);
-})->group('Opdracht17');
+})->group('Opdracht17oud');

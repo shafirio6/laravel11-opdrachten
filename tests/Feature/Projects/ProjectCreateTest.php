@@ -18,7 +18,7 @@ test('admin can see the project create page', function()
         ->get(route('projects.create'))
         ->assertViewIs('admin.projects.create')
         ->assertStatus(200);
-})->group('ProjectCreate', 'Opdracht13', 'Website');
+})->group('ProjectCreate', 'Opdracht13oud', 'Website');
 
 test('teacher can see the product create page', function()
 {
@@ -28,7 +28,7 @@ test('teacher can see the product create page', function()
         ->get(route('projects.create'))
         ->assertViewIs('admin.projects.create')
         ->assertStatus(200);
-})->group('ProjectCreate', 'Opdracht13', 'Website');
+})->group('ProjectCreate', 'Opdracht13oud', 'Website');
 
 test('student can see the product create page', function()
 {
@@ -38,12 +38,12 @@ test('student can see the product create page', function()
         ->get(route('projects.create'))
         ->assertViewIs('admin.projects.create')
         ->assertStatus(200);
-})->group('ProjectCreate', 'Opdracht13', 'Website');
+})->group('ProjectCreate', 'Opdracht13oud', 'Website');
 
 test('guest can not see the project create page', function(){
     $this->get(route('projects.create'))
         ->assertRedirect(route('login'));
-})->group('ProjectCreate', 'Opdracht13', 'Website');
+})->group('ProjectCreate', 'Opdracht13oud', 'Website');
 
 
 

@@ -43,7 +43,7 @@ test('admin can see the task admin edit page', function()
         ->assertSee(Activity::find(2)->name)
         ->assertSee(Activity::find(3)->name)
         ->assertStatus(200);
-})->group('TaskEdit', 'Opdracht21', 'Website');
+})->group('TaskEdit', 'Opdracht21oud', 'Website');
 
 test('teacher can see the product edit page', function()
 {
@@ -65,7 +65,7 @@ test('teacher can see the product edit page', function()
         ->assertSee(Activity::find(2)->name)
         ->assertSee(Activity::find(3)->name)
         ->assertStatus(200);
-})->group('TaskEdit', 'Opdracht21', 'Website');
+})->group('TaskEdit', 'Opdracht21oud', 'Website');
 
 test('student can see the product edit page', function()
 {
@@ -87,12 +87,12 @@ test('student can see the product edit page', function()
         ->assertSee(Activity::find(2)->name)
         ->assertSee(Activity::find(3)->name)
         ->assertStatus(200);
-})->group('TaskEdit', 'Opdracht21', 'Website');
+})->group('TaskEdit', 'Opdracht21oud', 'Website');
 
 test('guest can not see the task admin edit page', function(){
     $this->get(route('tasks.edit',['task' => $this->task->id]))
         ->assertRedirect(route('login'));
-})->group('TaskEdit', 'Opdracht21', 'Website');
+})->group('TaskEdit', 'Opdracht21oud', 'Website');
 
 
 

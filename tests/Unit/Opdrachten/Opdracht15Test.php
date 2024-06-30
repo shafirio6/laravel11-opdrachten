@@ -25,15 +25,15 @@ test('Data from factory is in the activity table', function () {
         'id' => $this->activity->id,
         'name' => $this->activity->name
     ]);
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 test('a activity id is a int', function(){
     expect($this->activity->id)->toBeInt();
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 test('a activity name is a string', function(){
     expect($this->activity->name)->toBeString();
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 // Tests voor tasks
 test('Data from factory is in the tasks table', function () {
@@ -46,31 +46,31 @@ test('Data from factory is in the tasks table', function () {
         'project_id' => $this->task->project_id,
         'activity_id' => $this->task->activity_id
     ]);
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 test('a task id is a int', function(){
     expect($this->task->id)->toBeInt();
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 test('a task is a string', function(){
     expect($this->task->task)->toBeString();
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 test('a task begindate is a datetime of Carbon', function(){
     expect($this->task->begindate)->toBeInstanceOf(Carbon::class);
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 test('a task enddate is a datetime of Carbon', function(){
     expect($this->task->enddate)->toBeInstanceOf(Carbon::class);
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 test('a task belongs to a user', function(){
     expect($this->task->user)->toBeInstanceOf(User::class); // relatie check
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 test('a task belongs to a project', function(){
     expect($this->task->project)->toBeInstanceOf(Project::class); // relatie check
-})->group('Opdracht15');
+})->group('Opdracht15oud');
 
 /*
 test('a task has a activity', function(){

@@ -25,7 +25,7 @@ test('the task need to be at least 10 characters', function () {
     Laravel\be($admin)
         ->patchJson(route('tasks.update',['task' => $this->task->id]), $task->toArray())
         ->assertStatus(422);
-})->group( 'TaskUpdate', 'Opdracht21', 'Website');
+})->group( 'TaskUpdate', 'Opdracht21oud', 'Website');
 
 test('the task can only be 200 characters max', function () {
     $admin = User::find(3);
@@ -34,7 +34,7 @@ test('the task can only be 200 characters max', function () {
     Laravel\be($admin)
         ->patchJson(route('tasks.update',['task' => $this->task->id]), $task->toArray())
         ->assertStatus(422);
-})->group( 'TaskUpdate', 'Opdracht21', 'Website');
+})->group( 'TaskUpdate', 'Opdracht21oud', 'Website');
 
 test('the task needs a begindate', function () {
     $admin = User::find(3);
@@ -43,7 +43,7 @@ test('the task needs a begindate', function () {
     Laravel\be($admin)
         ->patchJson(route('tasks.update',['task' => $this->task->id]), $task->toArray())
         ->assertStatus(422);
-})->group( 'TaskUpdate', 'Opdracht21', 'Website');
+})->group( 'TaskUpdate', 'Opdracht21oud', 'Website');
 
 test('the task needs a project', function () {
     $admin = User::find(3);
@@ -52,7 +52,7 @@ test('the task needs a project', function () {
     Laravel\be($admin)
         ->patchJson(route('tasks.update',['task' => $this->task->id]), $task->toArray())
         ->assertStatus(422);
-})->group( 'TaskUpdate', 'Opdracht21', 'Website');
+})->group( 'TaskUpdate', 'Opdracht21oud', 'Website');
 
 test('the task needs an activity', function () {
     $admin = User::find(3);
@@ -61,4 +61,4 @@ test('the task needs an activity', function () {
     Laravel\be($admin)
         ->patchJson(route('tasks.update',['task' => $this->task->id]), $task->toArray())
         ->assertStatus(422);
-})->group( 'TaskUpdate', 'Opdracht21', 'Website');
+})->group( 'TaskUpdate', 'Opdracht21oud', 'Website');

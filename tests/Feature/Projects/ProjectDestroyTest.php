@@ -16,7 +16,7 @@ test('admin can destroy a project', function(){
     $this->json('DELETE', route('projects.destroy', ['project' => $this->project->id]))
         ->assertRedirect(route('projects.index'));
     $this->assertDatabaseMissing('projects', ['id' => $this->project->id]);
-})->group('ProjectDestroy', 'Opdracht13', 'Website');
+})->group('ProjectDestroy', 'Opdracht13oud', 'Website');
 
 test('teacher can destroy a project', function(){
     $teacher = User::find(2);
@@ -24,16 +24,16 @@ test('teacher can destroy a project', function(){
     $this->json('DELETE', route('projects.destroy', ['project' => $this->project->id]))
         ->assertRedirect(route('projects.index'));
     $this->assertDatabaseMissing('projects', ['id' => $this->project->id]);
-})->group('ProjectDestroy', 'Opdracht13', 'Website');
+})->group('ProjectDestroy', 'Opdracht13oud', 'Website');
 
 test('student can not destroy a project', function () {
     $student = User::find(1);
     Laravel\be($student);
     $this->json('DELETE', route('projects.destroy', ['project' => $this->project->id]))
         ->assertForbidden();
-})->group('ProjectDestroy', 'Opdracht13', 'Website');
+})->group('ProjectDestroy', 'Opdracht13oud', 'Website');
 
 test('guestcan not destroy a project', function () {
     $this->json('DELETE', route('projects.destroy', ['project' => $this->project->id]))
         ->assertStatus(401);
-})->group('ProjectDestroy', 'Opdracht13', 'Website');
+})->group('ProjectDestroy', 'Opdracht13oud', 'Website');

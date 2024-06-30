@@ -56,4 +56,3 @@ test('delete method redirects to index after successful store and shows flash me
         ->assertSee('Project testproject is verwijderd');
 })->group('Opdracht9');
 
-

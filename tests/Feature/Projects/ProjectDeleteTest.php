@@ -20,7 +20,7 @@ test('admin can see the project delete page', function()
         ->assertSee($this->project->name)
         ->assertSee($this->project->description)
         ->assertStatus(200);
-})->group('ProjectDelete', 'Opdracht13', 'Website');
+})->group('ProjectDelete', 'Opdracht13oud', 'Website');
 
 test('teacher can see the product delete page', function()
 {
@@ -32,19 +32,19 @@ test('teacher can see the product delete page', function()
         ->assertSee($this->project->name)
         ->assertSee($this->project->description)
         ->assertStatus(200);
-})->group('ProjectDelete', 'Opdracht13', 'Website');
+})->group('ProjectDelete', 'Opdracht13oud', 'Website');
 
 test('student can not see the project delete page', function(){
     $student = User::find(1);
     Laravel\be($student);
     $this->get(route('projects.delete',['project' => $this->project->id]))
         ->assertForbidden();
-})->group('ProjectDelete', 'Opdracht13', 'Website');
+})->group('ProjectDelete', 'Opdracht13oud', 'Website');
 
 test('guest can not see the project delete page', function(){
     $this->get(route('projects.delete',['project' => $this->project->id]))
         ->assertRedirect(route('login'));
-})->group('ProjectDelete', 'Opdracht13', 'Website');
+})->group('ProjectDelete', 'Opdracht13oud', 'Website');
 
 
 

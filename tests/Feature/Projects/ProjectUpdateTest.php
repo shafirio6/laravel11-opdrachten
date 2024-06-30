@@ -24,7 +24,7 @@ test('an admin can update a project in the database', function () {
         'name' => 'testproject',
         'description' => 'dit is een test project'
     ]);
-})->group('ProjectUpdate', 'Opdracht13', 'Website');
+})->group('ProjectUpdate', 'Opdracht13oud', 'Website');
 
 test('a teacher can update a project in the database', function () {
     $this->withoutExceptionHandling();
@@ -40,7 +40,7 @@ test('a teacher can update a project in the database', function () {
         'name' => 'testproject',
         'description' => 'dit is een test project'
     ]);
-})->group('ProjectUpdate', 'Opdracht13', 'Website');
+})->group('ProjectUpdate', 'Opdracht13oud', 'Website');
 
 test('a student can update a project in the database', function () {
     $this->withoutExceptionHandling();
@@ -56,12 +56,12 @@ test('a student can update a project in the database', function () {
         'name' => 'testproject',
         'description' => 'dit is een test project'
     ]);
-})->group('ProjectUpdate', 'Opdracht13', 'Website');
+})->group('ProjectUpdate', 'Opdracht13oud', 'Website');
 
 test('a guest can not update a project in the database', function () {
     $project = Project::factory()->make(['name' => 'testproject', 'description' => 'dit is een test project']);
 
     $this->patchJson(route('projects.update',['project' => $this->project->id]), $project->toArray())
         ->assertStatus(401);
-})->group('ProjectUpdate', 'Opdracht13', 'Website');
+})->group('ProjectUpdate', 'Opdracht13oud', 'Website');
 

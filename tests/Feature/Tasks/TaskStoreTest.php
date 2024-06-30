@@ -21,7 +21,7 @@ beforeEach(function (){
 test('guest can not create an task in the  task admin', function () {
     $this->postJson(route('tasks.store'))
         ->assertStatus(401);
-})->group( 'TaskStore', 'Opdracht19', 'Website');
+})->group( 'TaskStore', 'Opdracht19oud', 'Website');
 
 test('admin can create a task in the task admin', function () {
     $admin = User::find(3);
@@ -44,7 +44,7 @@ test('admin can create a task in the task admin', function () {
         'project_id' => 1,
         'activity_id' => 1
     ]);
-})->group( 'TaskStore', 'Opdracht19', 'Website');
+})->group( 'TaskStore', 'Opdracht19oud', 'Website');
 
 test('teacher can create a task in the task admin', function () {
     $teacher = User::find(2);
@@ -67,7 +67,7 @@ test('teacher can create a task in the task admin', function () {
         'project_id' => 1,
         'activity_id' => 1
     ]);
-})->group( 'TaskStore', 'Opdracht19', 'Website');
+})->group( 'TaskStore', 'Opdracht19oud', 'Website');
 
 test('student can create a task in the task admin', function () {
     $student = User::find(1);
@@ -90,5 +90,5 @@ test('student can create a task in the task admin', function () {
         'project_id' => 1,
         'activity_id' => 1
     ]);
-})->group( 'TaskStore', 'Opdracht19', 'Website');
+})->group( 'TaskStore', 'Opdracht19oud', 'Website');
 

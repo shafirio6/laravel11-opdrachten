@@ -23,7 +23,7 @@ test('an admin can store a project in the database', function () {
         'name' => 'testproject',
         'description' => 'dit is een test project'
     ]);
-})->group('ProjectStore', 'Opdracht13', 'Website');
+})->group('ProjectStore', 'Opdracht13oud', 'Website');
 
 test('a teacher can store a project in the database', function () {
     $this->withoutExceptionHandling();
@@ -38,7 +38,7 @@ test('a teacher can store a project in the database', function () {
         'name' => 'testproject',
         'description' => 'dit is een test project'
     ]);
-})->group('ProjectStore', 'Opdracht13', 'Website');
+})->group('ProjectStore', 'Opdracht13oud', 'Website');
 
 test('a student can store a project in the database', function () {
     $this->withoutExceptionHandling();
@@ -53,11 +53,11 @@ test('a student can store a project in the database', function () {
         'name' => 'testproject',
         'description' => 'dit is een test project'
     ]);
-})->group('ProjectStore', 'Opdracht13', 'Website');
+})->group('ProjectStore', 'Opdracht13oud', 'Website');
 
 test('a guest can not store a project in the database', function () {
     $project = Project::factory()->make(['name' => 'testproject', 'description' => 'dit is een test project']);
     $this->postJson(route('projects.store'), $project->toArray())
         ->assertStatus(401);
-})->group('ProjectStore', 'Opdracht13', 'Website');
+})->group('ProjectStore', 'Opdracht13oud', 'Website');
 

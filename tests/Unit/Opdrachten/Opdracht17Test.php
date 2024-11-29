@@ -39,6 +39,7 @@ test('Activity factory creates valid data', function () {
 
 // Test of de Task factory werkt
 test('Task factory creates valid data', function () {
+    $activity = Activity::factory()->create();
     $task = Task::factory()->create();
 
     // Controleer of het record is aangemaakt
@@ -62,6 +63,7 @@ test('Task factory creates valid data', function () {
 
 // Test dat de Task factory geldige relaties maakt
 test('Task factory creates valid relationships', function () {
+    $activity = Activity::factory()->create();
     $task = Task::factory()->create();
 
     // Controleer of de gerelateerde records bestaan
@@ -78,6 +80,7 @@ test('Task factory creates valid relationships', function () {
 
 // Test dat de gegenereerde data voldoet aan de veldgroottes
 test('Task factory data fits within field sizes', function () {
+    $activity = Activity::factory()->create();
     $task = Task::factory()->create();
 
     $this->assertLessThanOrEqual(200, strlen($task->task));

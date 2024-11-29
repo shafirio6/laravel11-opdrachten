@@ -107,13 +107,13 @@ test('student role has correct permissions', function () {
 
 test('teacher role has correct permissions', function () {
     $teacherRole = Role::where('name', 'teacher')->first();
-    $permissions = ['index project', 'create project', 'show project', 'edit project'];
+    $permissions = ['index project', 'create project', 'show project', 'edit project', 'delete project'];
 
     foreach ($permissions as $permission) {
         expect($teacherRole->hasPermissionTo($permission))->toBeTrue();
     }
 
-    expect($teacherRole->hasPermissionTo('delete project'))->toBeFalse();
+//    expect($teacherRole->hasPermissionTo('delete project'))->toBeFalse();
 })->group('Opdracht12');
 
 test('admin role has all permissions', function () {

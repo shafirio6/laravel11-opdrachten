@@ -9,6 +9,11 @@ use Database\Seeders\ProjectSeeder;
 use Database\Seeders\TaskSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+beforeEach(function () {
+    $this->seed('RoleAndPermissionSeeder');
+    $this->seed('UserSeeder');
+});
+
 // Test of de ActivitySeeder werkt
 test('ActivitySeeder runs successfully', function () {
     $this->seed(ActivitySeeder::class);
@@ -23,6 +28,7 @@ test('ActivitySeeder runs successfully', function () {
 
 // Test of de ProjectSeeder werkt
 test('ProjectSeeder runs successfully', function () {
+    $this->seed(ActivitySeeder::class);
     $this->seed(ProjectSeeder::class);
 
     $projectCount = Project::count();
@@ -34,6 +40,8 @@ test('ProjectSeeder runs successfully', function () {
 
 // Test of de TaskSeeder werkt
 test('TaskSeeder runs successfully', function () {
+    $this->seed(ActivitySeeder::class);
+    $this->seed(ProjectSeeder::class);
     $this->seed(TaskSeeder::class);
 
     $taskCount = Task::count();
@@ -49,6 +57,7 @@ test('TaskSeeder runs successfully', function () {
 
 // Test dat de project relatie correct is opgezet in de tasks table
 test('Task model has correct project relationship', function () {
+    $this->seed(ActivitySeeder::class);
     $project = Project::factory()->create();
     $task = Task::factory()->create(['project_id' => $project->id]);
 
@@ -59,6 +68,7 @@ test('Task model has correct project relationship', function () {
 // Test dat de activity relatie correct is opgezet in de tasks table
 test('Task model has correct activity relationship', function () {
     $activity = Activity::factory()->create();
+    $this->seed(ProjectSeeder::class);
     $task = Task::factory()->create(['activity_id' => $activity->id]);
 
     $this->assertTrue($task->activity()->exists());
@@ -67,6 +77,8 @@ test('Task model has correct activity relationship', function () {
 
 // Test dat de user relatie correct is opgezet in de tasks table
 test('Task model has correct user relationship', function () {
+    $this->seed(ActivitySeeder::class);
+    $this->seed(ProjectSeeder::class);
     $user = User::factory()->create();
     $task = Task::factory()->create(['user_id' => $user->id]);
 

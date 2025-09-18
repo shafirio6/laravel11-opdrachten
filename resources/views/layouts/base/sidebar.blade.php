@@ -27,6 +27,12 @@
                 <i class="fad fa-envelope-open-text text-xs mr-2"></i>
                 email
             </a>
+
+            @hasanyrole('student|teacher|admin')
+            <a href="{{route('projects.index')}}">project admin</a>
+
+
+            @endhasanyrole
             <!-- end link -->
         @endguest
     </div>

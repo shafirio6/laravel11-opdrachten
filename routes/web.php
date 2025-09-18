@@ -24,6 +24,15 @@ Route::get('/projects', [Open\ProjectController::class, 'index'])->name('open.pr
 Route::resource('admin/projects', Admin\ProjectController::class);
 Route::get( '/Admin/project/{project}/delete', [Admin\ProjectController::class, 'delete'])->name('projects.delete');
 
+Route::group(['middleware' => ['role:teacher|student|admin']], function () {
+    Route::get('/admin/projects/{projects},/delete', [Admin\ProjectController::class, 'delete'])
+        ->name('admin.projects.delete');
+    Route::resource('admin/projects', Admin\ProjectController::class);
+
+    Route::get('dashboard',function(){
+        return view('dashboard');
+    })-> middleware(['auth','verified'])->name('dashboard');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

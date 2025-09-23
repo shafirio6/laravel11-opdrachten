@@ -74,6 +74,6 @@ test('a task belongs to a project', function(){
 
 /*
 test('a task has a activity', function(){
-    expect($this->task->activities)->toBeInstanceOf(Activity::class); // relatie check
+    expect($this->task->activities)->toBeInstanceOf(ActivitySeeder::class); // relatie check
 })->group('Opdracht12_13');
 */

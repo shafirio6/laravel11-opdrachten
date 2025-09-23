@@ -19,8 +19,8 @@ test('activities table can be seeded with data from factory', function () {
     $this->assertGreaterThan(0, Activity::count());
 })->group('Opdracht17');
 
-// Test of de Activity factory werkt
-test('Activity factory creates valid data', function () {
+// Test of de ActivitySeeder factory werkt
+test('ActivitySeeder factory creates valid data', function () {
     $activity = Activity::factory()->create();
 
     // Controleer of het record is aangemaakt

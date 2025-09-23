@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-// Test of de Activity model bestaat
-test('Activity model exists', function () {
+// Test of de ActivitySeeder model bestaat
+test('ActivitySeeder model exists', function () {
     $this->assertTrue(class_exists(Activity::class));
 })->group('Opdracht16');
 
@@ -100,8 +100,8 @@ test('Project model has tasks relationship', function () {
     $this->assertInstanceOf(HasMany::class, $project->tasks());
 })->group('Opdracht16');
 
-// Test voor Activity model relatie
-test('Activity model has tasks relationship', function () {
+// Test voor ActivitySeeder model relatie
+test('ActivitySeeder model has tasks relationship', function () {
     $activity = new Activity();
     $this->assertInstanceOf(HasMany::class, $activity->tasks());
 })->group('Opdracht16');

@@ -54,15 +54,21 @@
                             <td class="px-4 py-3 text-sm">{{ $project->id }}</td>
                             <td class="px-4 py-3 text-sm">{{ $project->name }}</td>
                             <td class="px-4 py-3 text-sm"><a href="{{route('projects.show', ['project' => $project->id])}}">Details</a></td>
+
                             <td class="px-4 py-3">
+                                @can('edit project')
                                 <div class="flex items-center space-x-4 text-sm">
                                     <a href="{{route('projects.edit', ['project' => $project->id])}}">Wijzigen</a>
                                 </div>
+                                @endcan
                             </td>
+
                             <td>
+                                @can('delete project')
                                 <div class="flex items-center space-x-4 text-sm">
                                     <a href="{{route('projects.delete', ['project' => $project->id])}}">verwijderen</a>
                                 </div>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach

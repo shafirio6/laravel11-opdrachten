@@ -13,14 +13,12 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
-        $activities = [
-            ['id' => 1, 'name' => 'Todo'],
-            ['id' => 2, 'name' => 'Doing'],
-            ['id' => 3, 'name' => 'Testing'],
-            ['id' => 4, 'name' => 'Verify'],
-            ['id' => 5, 'name' => 'Done'],
-        ];
 
-        Activity::insert($activities);
+        $todo = Activity::factory()->create(['id'=> 1,'name'=>'Todo']);
+        $doing = Activity::factory()->create(['id'=> 2,'name'=>'Doing']);
+        $testing = Activity::factory()->create(['id'=> 3,'name'=>'Testing']);
+        $verify = Activity::factory()->create(['id'=> 4,'name'=>'Verify']);
+        $done = Activity::factory()->create(['id'=> 5,'name'=>'Done']);
+
     }
 }

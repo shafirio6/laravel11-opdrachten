@@ -14,7 +14,10 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+//        $tasks = Task::all();
+        $tasks = Task::with('user', 'activity', 'project')->paginate(15);
+
+        return view('admin.tasks.index', ['tasks'=> $tasks]);
     }
 
     /**
@@ -55,6 +58,11 @@ class TaskController extends Controller
     public function update(TaskUpdateRequest $request, Task $task)
     {
         //
+    }
+
+    public function delete(Task $task)
+    {
+
     }
 
     /**

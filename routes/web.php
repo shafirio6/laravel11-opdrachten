@@ -34,6 +34,13 @@ Route::group(['middleware' => ['role:teacher|student|admin']], function () {
     })-> middleware(['auth','verified'])->name('dashboard');
 });
 
+Route::get( '/admin/tasks/{task}/delete', [Admin\TaskController::class, 'delete'])->name('tasks.delete');
+Route::resource('admin/tasks', Admin\TaskController::class);
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

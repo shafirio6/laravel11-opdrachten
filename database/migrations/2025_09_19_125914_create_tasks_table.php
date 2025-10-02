@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('task', 200);
-            $table->date('begindate');
+            $table->date('begindate')->nullable();
             $table->date('enddate')->nullable();
             $table->foreignId('user_id')->nullable()->constrained()
                 ->onUpdate('no action')->onDelete('no action');

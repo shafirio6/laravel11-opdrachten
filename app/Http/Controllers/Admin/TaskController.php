@@ -73,7 +73,7 @@ class TaskController extends Controller implements HasMiddleware
      */
     public function show(Task $task)
     {
-        //
+        return view('admin.tasks.show', ['task' => $task]);
     }
 
     /**

@@ -115,7 +115,16 @@ class TaskController extends Controller implements HasMiddleware
 
     public function delete(Task $task)
     {
+        $users = User::all();
+        $projects = Project::all();
+        $activities = Activity::all();
 
+        return view('admin.tasks.delete', [
+            'task' => $task,
+            'users' => $users,
+            'activities' => $activities,
+            'projects' => $projects,
+        ]);
     }
 
     /**

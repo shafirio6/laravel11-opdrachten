@@ -31,7 +31,6 @@ test('task delete page contains the correct input fields', function () {
     $task = Task::with('user', 'project', 'activity')->first();
 
     $response = $this->get(route('tasks.delete', $task->id));
-
     $response->assertSee('name="task"', false);
     $response->assertSee('name="begindate"', false);
     $response->assertSee('name="enddate"', false);
@@ -47,13 +46,13 @@ test('task delete page input fields are disabled', function () {
     $task = Task::with('user', 'project', 'activity')->first();
 
     $response = $this->get(route('tasks.delete', $task->id));
-
-    $response->assertSee('name="task" value="'.$task->task.'" disabled', false);
-    $response->assertSee('name="begindate" value="'.$task->begindate.'" disabled', false);
-    $response->assertSee('name="enddate" value="'.$task->enddate.'" disabled', false);
-    $response->assertSee('name="user_id" disabled', false);
-    $response->assertSee('name="project_id" disabled', false);
-    $response->assertSee('name="activity_id" disabled', false);
+    $escapedTaskValue = htmlspecialchars($task->task, ENT_QUOTES);
+    $response->assertSeeInOrder(['name="task"', 'value="'.$escapedTaskValue.'"', 'disabled'], false);
+    $response->assertSeeInOrder(['name="begindate"', 'value="'.$task->begindate.'"', 'disabled'], false);
+    $response->assertSeeInOrder(['name="enddate"', 'value="'.$task->enddate.'"', 'disabled'], false);
+    $response->assertSeeInOrder(['name="user_id"', 'disabled'], false);
+    $response->assertSeeInOrder(['name="project_id"', 'disabled'], false);
+    $response->assertSeeInOrder(['name="activity_id"', 'disabled'], false);
 })->group('Opdracht26');
 
 // Test of de dropdown opties correct zijn voor user, project en activity
@@ -65,10 +64,10 @@ test('task delete page contains correct dropdown options', function () {
     $response = $this->get(route('tasks.delete', $task->id));
 
     if ($task->user) {
-        $response->assertSee('<option value="'.$task->user->id.'">'.$task->user->name.'</option>', false);
+        $response->assertSeeInOrder(['option value="'.$task->user->id.'"', $task->user->name], false);
     }
-    $response->assertSee('<option value="'.$task->project->id.'">'.$task->project->name.'</option>', false);
-    $response->assertSee('<option value="'.$task->activity->id.'">'.$task->activity->name.'</option>', false);
+    $response->assertSeeInOrder(['option value="'.$task->project->id.'"', $task->project->name], false);
+    $response->assertSeeInOrder(['option value="'.$task->activity->id.'"', $task->activity->name], false);
 })->group('Opdracht26');
 
 // Test of de juiste action in het formulier zit

@@ -132,6 +132,7 @@ class TaskController extends Controller implements HasMiddleware
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+        return to_route('tasks.index')->with('status', "Taak: $task->task is verwijderd");
     }
 }

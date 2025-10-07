@@ -48,7 +48,11 @@ class TaskController extends Controller implements HasMiddleware
         $projects = Project::all();
         $activities = Activity::all();
 
-        return view('admin.tasks.create', ['users' => $users, 'activities' => $activities, 'projects' => $projects]);
+        return view('admin.tasks.create', [
+            'users' => $users,
+            'activities' => $activities,
+            'projects' => $projects
+        ]);
     }
 
     /**
@@ -81,15 +85,32 @@ class TaskController extends Controller implements HasMiddleware
      */
     public function edit(Task $task)
     {
-        //
+        $users = User::all();
+        $projects = Project::all();
+        $activities = Activity::all();
+
+        return view('admin.tasks.edit', [
+            'task' => $task,
+            'users' => $users,
+            'activities' => $activities,
+            'projects' => $projects,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(TaskUpdateRequest $request, Task $task)
+    public function update(TaskStoreRequest $request, Task $task)
     {
-        //
+        $task->task = $request->task;
+        $task->begindate = $request->begindate;
+        $task->enddate = $request->enddate;
+        $task->user_id = $request->user_id;
+        $task->project_id = $request->project_id;
+        $task->activity_id = $request->activity_id;
+        $task->save();
+
+        return to_route('tasks.index')->with('status', "Taak: $task->task is bijgewerkt");
     }
 
     public function delete(Task $task)

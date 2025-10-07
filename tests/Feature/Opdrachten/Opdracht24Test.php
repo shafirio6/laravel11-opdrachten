@@ -32,6 +32,7 @@ test('task edit page contains the correct input fields', function () {
     $task = Task::first();
     $response = $this->get(route('tasks.edit', $task->id));
 
+    $escapeTaskValue = htmlspecialchars($task->task, ENT_QUOTES);
     $response->assertStatus(200)
         ->assertViewIs('admin.tasks.edit')
         ->assertSee('name="task"', false)
@@ -40,7 +41,7 @@ test('task edit page contains the correct input fields', function () {
         ->assertSee('name="user_id"', false)
         ->assertSee('name="project_id"', false)
         ->assertSee('name="activity_id"', false)
-        ->assertSee('value="'.$task->task.'"', false)
+        ->assertSee('value="'.$escapeTaskValue.'"', false)
         ->assertSee('value="'.$task->begindate.'"', false)
         ->assertSee('value="'.$task->enddate.'"', false)
         ->assertSee('action="'.route('tasks.update', $task->id).'"', false);
